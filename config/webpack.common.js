@@ -53,10 +53,9 @@ module.exports = {
                 {
                     loader: 'sass-loader',
                     options: {
-                        indentedSyntax: true,
                         // sass-loader version >= 8
                         sassOptions: {
-                        indentedSyntax: true
+                            indentedSyntax: true,
                         }
                     }
                 }
@@ -97,16 +96,6 @@ module.exports = {
                 // this applies to pug imports inside JavaScript
                 {
                 use: ['raw-loader', 'pug-plain-loader']
-                }
-            ]
-        },{
-            test: /\.vue.(ts|tsx)$/,
-            exclude: /node_modules/,
-            enforce: 'pre',
-            use: [
-                {
-                    loader: 'vue-tslint-loader',
-                    options: { /* Loader options go here */ }
                 }
             ]
         },{

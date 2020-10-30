@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "babel-plugin-transform-typescript-metadata": "^0.3.1",
+    "bulma": "^0.9.1",
     "iview": "^3.5.4",
     "module-alias": "^2.2.2",
     "tailwindcss": "^1.9.6",

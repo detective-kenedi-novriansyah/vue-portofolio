@@ -5,7 +5,6 @@ const state: BookState = {
     book: [],
     data: {},
     validate: false,
-    message: {},
 };
 
 const actions = {

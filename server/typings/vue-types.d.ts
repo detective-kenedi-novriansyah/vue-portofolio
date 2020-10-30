@@ -6,13 +6,30 @@ import Vue from 'vue';
 declare module 'vue/types/vue' {
   // 3. Declare augmentation for Vue
   interface Vue {
-    $myProperty: string;
+        $myProperty: string;
+        active_: boolean;
+        username: string;
+        email: string;
+        first_name: string;
+        last_name: string;
+        password: string;
+        confirm_password: string;
+
+        $store: any;
+        $Message: any;
+
+        fetchBook: any;
+        fetchSchema: any;
+        requestUser: any;
+        validateUser: any;
+        loadIsAuthenticated: any;
+        allSchema: any;
   }
 }
 
 // ComponentOptions is declared in types/options.d.ts
 declare module 'vue/types/options' {
     interface ComponentOptions<V extends Vue> {
-      myOption?: string;
+        myOption?: string;
     }
   }

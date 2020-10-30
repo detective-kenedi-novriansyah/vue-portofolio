@@ -4,7 +4,7 @@
             <div id="content-image">
                 <div id="background-color-image">
                     <div id="rotate">
-                        <img :src="allSchema.my ? allSchema.my.avatar : ''" alt="" class="w-64 h-64 rounded-full block m-auto">
+                        <img :src="allSchema.my ? allSchema.my.avatar : ''" alt="" class="w-64 h-64 rounded-full block m-auto" id="my-avatar">
                         <div class="flex items-center justify-center my-12">
                             <vs-button block shadow>
                                 {{allSchema.my ? allSchema.my.about : ''}}
@@ -38,18 +38,18 @@
     </div>
 </template>
 
-<script>
-import { Component, Vue } from 'vue-property-decorator'
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 import { mapGetters } from 'vuex';
 
 @Component({
-    computed: mapGetters(['allSchema','allBook'])
+    computed: mapGetters(['allSchema', 'allBook']),
 })
 export default class BaseHome extends Vue {}
 </script>
 
 <style>
-@media (min-width: 850px) {
+@media only screen and (min-width: 850px) {
     #background-color-image {
         background-color: red;
         width: 460px;
@@ -63,7 +63,7 @@ export default class BaseHome extends Vue {}
         box-shadow: 10px 10px 5px #aaaaaa;
     }
 }
-@media (max-width: 849px) and (min-width: 768px) {
+@media only screen and (max-width: 849px) and (min-width: 768px) {
     #background-color-image {
         background-color: red;
         width: 360px;
@@ -77,7 +77,7 @@ export default class BaseHome extends Vue {}
         box-shadow: 10px 10px 5px #aaaaaa;
     }
 }
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
     #background-color-image {
         background-color: red;
         width: 320px;
@@ -93,7 +93,7 @@ export default class BaseHome extends Vue {}
     }
 }
 
-@media (max-width: 320px) {
+@media only screen and (max-width: 320px) {
     #background-color-image {
         background-color: red;
         width: 280px;
@@ -113,7 +113,7 @@ export default class BaseHome extends Vue {}
   width: 100%;
 }
 
-@media (min-width: 850px) {
+@media only screen and (min-width: 850px) {
     #container {
         margin-left: 1.5%;
         margin-right: 1.5%;
@@ -122,7 +122,7 @@ export default class BaseHome extends Vue {}
         z-index: -1;
     }
 }
-@media (max-width: 849px) and (min-width: 768px) {
+@media only screen and (max-width: 849px) and (min-width: 768px) {
     #container {
         margin-left: 1.5%;
         margin-right: 1.5%;
@@ -132,12 +132,12 @@ export default class BaseHome extends Vue {}
     }
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
     #content {
         width: 100%;
     }
 }
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
     #content {
         width: 80%;
         display: block;
@@ -150,21 +150,21 @@ export default class BaseHome extends Vue {}
     align-items: center;
 }
 
-@media (min-width: 850px) {
+@media only screen and (min-width: 850px) {
     #content-text {
         font-size: 24px;
         font-weight: bold;
         text-transform: capitalize;
     }
 }
-@media (max-width: 849px) and (min-width: 768px) {
+@media only screen and (max-width: 849px) and (min-width: 768px) {
     #content-text {
         font-size: 18px;
         font-weight: bold;
         text-transform: capitalize;
     }
 }
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
     #content-text {
         font-size: 16px;
         font-weight: bold;
@@ -188,13 +188,13 @@ export default class BaseHome extends Vue {}
     transform: rotate(40deg);
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
     #card-skill {
         width: 360px;
         margin: 6px;
     }
 }
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
     #card-skill {
         width: 100%;
         margin: 6px;

@@ -1,4 +1,4 @@
-import { Book, Message } from './interface';
+import { Book } from './interface';
 
 export enum bookTypes {
     LOAD_BOOK = 'LOAD_BOOK',
@@ -8,7 +8,6 @@ export interface BookState {
     readonly book: Book[];
     readonly data: Book;
     readonly validate: boolean;
-    readonly message: Message;
 }
 
 export interface BookMutations {

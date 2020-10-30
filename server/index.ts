@@ -7,6 +7,7 @@ import './assets/tailwind.css';
 import 'vuesax/dist/vuesax.css';
 import router from './routes';
 import store from './modules';
+import 'bulma';
 
 Vue.config.productionTip = false;
 Vue.config.devtools = true;

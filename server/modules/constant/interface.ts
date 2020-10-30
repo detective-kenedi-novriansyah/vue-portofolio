@@ -33,14 +33,14 @@ export interface Book {
 }
 
 export interface Button {
-    title_login?: string;
+    titleLogin?: string;
     login?: string;
     signin?: string;
     register?: string;
     join?: string;
     title_register?: string;
     child_title_register?: string;
-    create_new_account?: string;
+    createNewAccount?: string;
     regex_password?: string;
     forgot?: string;
     forgot_password?: string;
@@ -83,15 +83,11 @@ export interface Schema {
         skill?: string;
         thanks?: string;
         validate_success?: string;
-        save_phone?: string;
-        save_email?: string;
+        savePhone?: string;
+        saveEmail?: string;
         subscribe?: string;
         manipulations?: string;
         email_address?: string;
         cancel?: string;
     };
-}
-
-export interface Message {
-    message?: string;
 }

@@ -16,9 +16,47 @@
 </head>
 <style>
   * {
-    outline: none !important;
-    border: none !important;
-  }
+      outline: none !important;
+      border: none !important;
+    }
+    @media only screen and (min-width: 768px) {
+      .vs-input {
+        width: 100% !important;
+      }
+    }
+
+    @media only screen and (max-width: 767px) and (min-width: 414px) {
+      .vs-input {
+        width: 320px !important;
+      }
+    }
+
+    @media only screen and (max-width: 411px) and (min-width: 370px) {
+      .vs-input {
+        width: 280px !important;
+      }
+      .vs-input-content {
+        width: 280px !important;
+      }
+    }
+
+    @media only screen and (max-width: 369px) and (min-width: 320px) {
+      .vs-input {
+        width: 230px !important;
+      }
+      .vs-input-content {
+        width: 230px !important;
+      }
+    }
+  
+    @media only screen and (max-width: 319px) {
+      .vs-input {
+        width: 200px !important;
+      }
+      .vs-input-content {
+        width: 200px !important;
+      }
+    }
 </style>
 <body>
   <div id="app"></div>

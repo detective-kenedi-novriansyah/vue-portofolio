@@ -10,7 +10,7 @@ const state: BookState = {
 
 const actions = {
     async fetchBook({commit}: any) {
-        const response = await axios.get('api/v1/book', {
+        const response = await axios.get('api/v1/book/', {
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Methods': 'GET',

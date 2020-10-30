@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es6",
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
@@ -12,27 +12,32 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "outDir": "./dist",
     "types": [
       "webpack-env"
     ],
     "paths": {
       "@/*": [
-        "src/*"
+        "server/*"
       ]
     },
     "lib": [
-      "esnext",
+      "es6",
       "dom",
       "dom.iterable",
       "scripthost"
     ]
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
+    "server/**/*.ts",
+    "server/**/*.tsx",
+    "server/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx", 
+    "server/typings/shims-vue.d.ts", 
+    "server/typings/shims-tsx.d.ts",
+    "server/typings/vuesax.d.ts",
+    "server/typings/vue-types.d.ts"
   ],
   "exclude": [
     "node_modules"

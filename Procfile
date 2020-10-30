@@ -1,0 +1,1 @@
+web: npx http-server dist --proxy https://bengkelsangkutbackend.herokuapp.com/ --port $PORT

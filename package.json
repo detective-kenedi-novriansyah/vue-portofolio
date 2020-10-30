@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "build": "webpack --config config/webpack.prod.js",
-    "serve": "rm -rf dist && webpack-dev-server --config config/webpack.dev.js"
+    "serve": "rm -rf dist && webpack-dev-server --config config/webpack.dev.js",
+    "heroku-postbuild": "npm run build",
+    "heroku-postinstall": "npm install"
   },
   "dependencies": {
     "axios": "^0.21.0",

@@ -3,7 +3,7 @@
         <header>
             <Navbar/>
         </header>
-        <section>
+        <section class="mb-64">
             <transition name="slide">
                 <router-view></router-view>
             </transition>

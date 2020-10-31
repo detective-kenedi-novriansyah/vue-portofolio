@@ -95,6 +95,7 @@ import { mapActions, mapGetters } from 'vuex';
       }).catch((err: any) => {
         this.$Message.error(err.response.data.nonFieldErrors[0]);
         this.$store.commit('REQUEST_USER_COMPLETE', false);
+        this.$router.push('/');
       });
     },
   },

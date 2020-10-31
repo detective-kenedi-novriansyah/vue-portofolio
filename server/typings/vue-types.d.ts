@@ -1,4 +1,5 @@
 // 1. Make sure to import 'vue' before declaring augmented types
+import { Auth } from '../modules/constant/interface';
 import Vue from 'vue';
 
 // 2. Specify a file with the types you want to augment
@@ -6,7 +7,7 @@ import Vue from 'vue';
 declare module 'vue/types/vue' {
   // 3. Declare augmentation for Vue
   interface Vue {
-        $myProperty: string;
+        $vs: any;
         active_: boolean;
         username: string;
         email: string;
@@ -14,6 +15,13 @@ declare module 'vue/types/vue' {
         last_name: string;
         password: string;
         confirm_password: string;
+        name: string;
+        image: any[];
+        description: string;
+        dialogImageUrl: string;
+        dialogVisible: boolean;
+        loading: boolean;
+        is_authenticate: Auth;
 
         $store: any;
         $Message: any;
@@ -24,6 +32,7 @@ declare module 'vue/types/vue' {
         validateUser: any;
         loadIsAuthenticated: any;
         allSchema: any;
+        recordBook: any;
   }
 }
 

@@ -1,5 +1,20 @@
 <template>
-    <div class="mt-12">
+    <div>
+        <div id="navbar">
+            <vs-button border type="button" color="rgb(59,222,200)" gradient v-on:click="handleClickOpenContact">
+                <Icon type="md-phone-portrait" />
+                <a id="btn-contact" class="ml-2">
+                    {{allSchema.my ? allSchema.my.contact : ''}}
+                </a>
+            </vs-button>
+            <div class="flex-1"></div>
+            <vs-button icon type="button" v-on:click="handleClickOpenNewWindow('https://github.com/kenedinovriansyah?tab=repositories')">
+                <Icon type="logo-github" />
+            </vs-button>
+            <vs-button icon type="button" v-on:click="handleClickOpenNewWindow('https://www.youtube.com/channel/UCiAGAKn6VGst6zLMif9_3rQ?view_as=subscriber')">
+                <Icon type="logo-youtube" />
+            </vs-button>
+        </div>
         <div id="container">
             <div id="content-image">
                 <div id="background-color-image">
@@ -26,12 +41,24 @@
                 {{allSchema.my ? allSchema.my.skill : ''}}
             </div>
         </div>
-        <div class="flex items-center justify-center flex-wrap">
-            <div v-for="book in allBook" :key="book.id">
-                <div id="card-skill">
-                    <img :src="book.image" alt="" class="w-20 h-20 rounded">
-                    <div id="text">{{book.name}}</div>
-                    <div id="description">{{book.description}}</div>
+        <div id="content-card">
+            <div class="flex items-center justify-center flex-wrap">
+                <div v-for="book in allBook" :key="book.id">
+                    <vs-card class="mx-1 my-2">
+                        <template #title>
+                            {{book.name}}
+                        </template>
+                        <template #img>
+                            <img :src="book.image" alt="" class="h-48">
+                        </template>
+                        <template #text>
+                            <div id="content-description">
+                                <p id="description">
+                                    {{book.description}}
+                                </p>
+                            </div>
+                        </template>
+                    </vs-card>
                 </div>
             </div>
         </div>
@@ -41,9 +68,24 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { mapGetters } from 'vuex';
+import contact from './contact/contact.vue';
 
 @Component({
     computed: mapGetters(['allSchema', 'allBook']),
+    methods: {
+        handleClickOpenNewWindow(newValue: string): void {
+            window.open(newValue);
+        },
+        handleClickOpenContact() {
+            const noti = this.$vs.notification({
+                duration: 10000,
+                position: 'bottom-left',
+                title: '',
+                text: '',
+                content: contact,
+          });
+        },
+    },
 })
 export default class BaseHome extends Vue {}
 </script>
@@ -272,5 +314,35 @@ export default class BaseHome extends Vue {}
   #my-button {
     width: 140px;
   }
+}
+
+#content-description {
+    height: 120px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media only screen and (min-width: 1024px) {
+    #content-card {
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 1000px)  and (min-width: 678px){
+    #content-card {
+        width: 95%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+#btn-contact {
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
 }
 </style>

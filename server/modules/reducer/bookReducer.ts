@@ -27,10 +27,29 @@ const actions = {
         });
         return response;
     },
+    async recordBook({commit}: any, data: FormData) {
+        const response = await axios.post('api/v1/book/', data, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'POST',
+                'Access-Control-Allow-Headers': 'Content-Type, Origin, Accept, Authorization, X-Requested-With',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
+            timeout: 865000,
+            responseType: 'json',
+            withCredentials: false,
+            maxContentLength: 2000,
+            maxRedirects: 5,
+            validateStatus: (status: number) => status >= 201 && status < 300,
+        });
+        return response;
+    },
 };
 
 const mutations: BookMutations = {
     LOAD_BOOK: (book: BookState | any, data: any) => (book.book = data),
+    RECORD_BOOK: (book: BookState, data: any) => (book.book.unshift(data)),
 };
 
 const getters: BookGetters = {

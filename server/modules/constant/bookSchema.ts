@@ -2,6 +2,8 @@ import { Book } from './interface';
 
 export enum bookTypes {
     LOAD_BOOK = 'LOAD_BOOK',
+    RECORD_BOOK = 'RECORD_BOOK',
+    BOOK_FAILURE = 'BOOK_FAILURE',
 }
 
 export interface BookState {

@@ -48,11 +48,12 @@ export interface Button {
     child_forgot_forgot?: string;
     ready_exists?: string;
     course?: string;
-    upload_book?: string;
-    upload_course?: string;
+    uploadBook?: string;
+    uploadCourse?: string;
     settings?: string;
     logout?: string;
     submit?: string;
+    signout?: string;
 }
 
 export interface Schema {

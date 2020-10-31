@@ -17,7 +17,7 @@
         </div>
         <div class="field">
           <div class="control">
-            <vs-input type="text" :placeholder="allSchema.auth ? allSchema.auth.user.username : ''" v-model="username">
+            <vs-input type="text" :placeholder="allSchema.auth ? allSchema.auth.user.username : ''" v-model="username" required autocomplete="off">
               <template #icon>
                 <i class="fas fa-user-circle"></i>
               </template>
@@ -26,7 +26,7 @@
         </div>
         <div class="field">
           <div class="control">
-            <vs-input type="password" :placeholder="allSchema.auth ? allSchema.auth.user.password : ''" v-model="password">
+            <vs-input type="password" :placeholder="allSchema.auth ? allSchema.auth.user.password : ''" v-model="password" required autocomplete="off">
               <template #icon>
                 <i class="fas fa-lock"></i>
               </template>
